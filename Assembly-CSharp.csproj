@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{218EAAC7-8FA3-0578-7E13-6E202A4D27B8}</ProjectGuid>
+    <ProjectGuid>{D249E33B-FF4A-47D1-2A1B-551CD01AEF5C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -70,10 +70,10 @@
     <Compile Include="Assets\Script\TeleportToLeft.cs" />
     <Compile Include="Assets\Script\TeleportToRight.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/SDE-03062/Downloads/Catch Game/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/SDE-03062/Desktop/github/Catch-Game-/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/SDE-03062/Downloads/Catch Game/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/SDE-03062/Desktop/github/Catch-Game-/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

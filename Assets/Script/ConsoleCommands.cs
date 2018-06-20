@@ -74,7 +74,11 @@ public class ConsoleCommands : MonoBehaviour {
                     }
                     if (t == typeof(int))
                     {
-                        lifeScore.text = value;
+                        if(value != "")
+                        {
+                            lifeScore.text = value;
+                        }
+
                     }
                     
 
@@ -97,11 +101,13 @@ public class ConsoleCommands : MonoBehaviour {
                 }
 
 
-
+                
+                 
+                 
 
                 break;
             default:
-                consoleLog.text += "This Command doesn't exist" + Environment.NewLine ;
+                consoleLog.text += "This Command doesn't exist" + Environment.NewLine;
                 break;
         }
     }
