@@ -45,7 +45,7 @@ public class ConsoleCommands : MonoBehaviour {
                 break;
             case "life":
 
-
+                int i = 1;
 
                 try
                 {
