@@ -15,15 +15,15 @@ public class ConsoleCommands : MonoBehaviour {
     public string[] strArray;
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         Button btn = enterB.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update() {
+
+    }
 
     void TaskOnClick()
     {
@@ -31,81 +31,54 @@ public class ConsoleCommands : MonoBehaviour {
         strArray = consoleInput.text.Split(" "[0]);
         string command = strArray[0];
         string value = "";
-        if(strArray.Length > 1)
+        if (strArray.Length > 1)
         {
             value = strArray[1];
         }
-        consoleInput.text = "shitt";
 
         switch (command.ToLower())
         {
-            
+
             case "restart":
                 SceneManager.LoadScene("SampleScene");
                 break;
+
             case "life":
-
-                int i = 1;
-
-                try
+                bool isNotInt = false;
+                char[] myChar = value.ToCharArray();
+                for (int i = 0; i < value.Length; i++)
                 {
-                    var x = 0;
-                    Debug.Log("This is before: " + value);
-                    int.TryParse(value, out x);
-                    
-                   // int i = int.Parse(value);
-                    Type t = x.GetType();
-                    Debug.Log("This is after: " + value);
-                   
-                    if (t == typeof(string))
-                    {
-                        consoleLog.text += "This ' ' after life doesn't exist " + Environment.NewLine;
-                        Debug.Log("string");
-                    }
-                    if (t == typeof(char))
-                    {
-                        consoleLog.text += "This ' ' after life doesn't exist " + Environment.NewLine;
-                        Debug.Log("char");
-                    }
-                    if (t == typeof(bool))
-                    {
-                        consoleLog.text += "This ' ' after life doesn't exist " + Environment.NewLine;
-                        Debug.Log("b00l");
-                    }
-                    if (t == typeof(int))
-                    {
-                        if(value != "")
+
+                        if (!System.Char.IsDigit(myChar[i]))
                         {
-                            lifeScore.text = value;
-                        }
+                            isNotInt = true;
 
-                    }
-                    
-
-                    if (value == "" || int.Parse(value) > 40 || int.Parse(value) < 3)
-                    {
-                        Debug.Log("0");
-                    }
-                    if (value != "")
-                    {
-                        Debug.Log("0");
-                    }
-
+                       }
 
                 }
-                catch
+                if (isNotInt == false)
                 {
-                    consoleLog.text += "THIS FAIL " + Environment.NewLine;
-                    Debug.Log("Catch Exeption Fail");
+                    if(int.Parse(value) > 0)
+                    {
+                        lifeScore.text = value;
+                        
+                    }
+                    else
+                    {
+                        consoleLog.text += "This '' after life is a wrong command" + Environment.NewLine;
+
+                    }
 
                 }
 
+                if(isNotInt == true)
+                {
 
-                
-                 
-                 
-
+                    consoleLog.text += "This '' after life is a wrong command" + Environment.NewLine;
+                    
+                }
                 break;
+
             default:
                 consoleLog.text += "This Command doesn't exist" + Environment.NewLine;
                 break;
