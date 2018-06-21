@@ -389,11 +389,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 182231483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fedbfd1fcca41ac41a83bbcbc677df56, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f1a5aa8a3e03ec46a1d05ea3dc2c3ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCube: {fileID: 981371381}
+  targetCube: {fileID: 182231483}
   player: {fileID: 1403429486}
+  newPos: {x: 9.62, y: -3.360001, z: -0.0314405}
 --- !u!65 &182231486
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1999,11 +2000,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 981371381}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edf0ec0e0f00c134e9d2b1aa2cf67653, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f1a5aa8a3e03ec46a1d05ea3dc2c3ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCube: {fileID: 182231483}
+  targetCube: {fileID: 981371381}
   player: {fileID: 1403429486}
+  newPos: {x: -9.62, y: -3.360001, z: -0.0314405}
 --- !u!65 &981371384
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2680,7 +2682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e5a20fefecf36147817be0647d6b943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 1732108137}
+  console: {fileID: 1732108137}
   counter: {fileID: 1175859551}
   retryText: {fileID: 1116802511}
   exitText: {fileID: 604455226}
@@ -4094,7 +4096,7 @@ GameObject:
   - component: {fileID: 1732108140}
   - component: {fileID: 1732108139}
   m_Layer: 0
-  m_Name: Panel
+  m_Name: Console
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

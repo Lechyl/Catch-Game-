@@ -67,6 +67,7 @@
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\RestartMenu.cs" />
     <Compile Include="Assets\Script\StartMenu.cs" />
+    <Compile Include="Assets\Script\Teleport.cs" />
     <Compile Include="Assets\Script\TeleportToLeft.cs" />
     <Compile Include="Assets\Script\TeleportToRight.cs" />
     <Reference Include="UnityEditor.StandardEvents">

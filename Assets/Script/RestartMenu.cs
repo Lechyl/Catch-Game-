@@ -6,14 +6,14 @@ using UnityEngine.UI;
 
 public class RestartMenu : MonoBehaviour {
 
-    public GameObject panel;
+    public GameObject console;
     public Text counter;
     public Text retryText;
     public Text exitText;
     public Button retryB;
     public Button exitB;
     private bool resume = false;
-
+    private bool consoleOpen = false;
 	// Use this for initialization
 	void Start () {
         retryB.onClick.AddListener(() =>
@@ -25,7 +25,7 @@ public class RestartMenu : MonoBehaviour {
         {
             SceneManager.LoadScene("StartMenu");
         });
-        panel.gameObject.SetActive(false);
+        console.gameObject.SetActive(false);
 
         
     }
@@ -35,16 +35,27 @@ public class RestartMenu : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-
             if (!resume)
             {
                 EndGame();
             }
             else if (resume)
             {
+                ConsoleClose();
                 Resume();
             }
 
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (!consoleOpen)
+            {
+                ConsoleOpen();
+            }
+            else if (consoleOpen)
+            {
+                ConsoleClose();
+            }
         }
     }
 
@@ -59,6 +70,25 @@ public class RestartMenu : MonoBehaviour {
 
 
 	}
+
+    void ConsoleOpen()
+    {
+             //open Console
+        
+            console.gameObject.SetActive(true);
+            consoleOpen = true;
+       
+
+    }
+
+    void ConsoleClose()
+    {
+        //close Console
+        
+            console.gameObject.SetActive(false);
+            consoleOpen = false;
+        
+    }
     void EndGame()
     {
         resume = true;
@@ -71,7 +101,6 @@ public class RestartMenu : MonoBehaviour {
         exitB.enabled = true;
         exitB.interactable = true;
         exitText.enabled = true;
-        panel.gameObject.SetActive(true);
 
 
     } //Make GUI Objects Visible as Life < 0
@@ -88,7 +117,6 @@ public class RestartMenu : MonoBehaviour {
         exitB.enabled = false;
         exitB.interactable = false;
         exitText.enabled = false;
-        panel.gameObject.SetActive(false);
 
     } // if resume = true , If Life > 0 Then Resume game/Continue Game
 }
