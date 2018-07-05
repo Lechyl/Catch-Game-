@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 182231486}
   - component: {fileID: 182231485}
   m_Layer: 0
-  m_Name: Wall Left (1)
+  m_Name: Wall Left TP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1968,7 +1968,7 @@ GameObject:
   - component: {fileID: 981371384}
   - component: {fileID: 981371383}
   m_Layer: 0
-  m_Name: Wall Right (1)
+  m_Name: Wall Right TP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3044,6 +3044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd0f4077189ec6243bc5a00b343feb75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 15
   timer: 1
   sphere: {fileID: 1430099592011976, guid: 18ddd9990751f03429e0442c8d3ca3a9, type: 2}
   bomb: {fileID: 1404515268541048, guid: 0f1be1ad20b754549abe34056d571f66, type: 2}
@@ -3069,7 +3070,6 @@ MonoBehaviour:
   maxComboMessage: {fileID: 1115444292}
   test: {fileID: 0}
   amountOfSpawnPoints: 12
-  movementSpeed: 25
 --- !u!65 &1403429488
 BoxCollider:
   m_ObjectHideFlags: 0

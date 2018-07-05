@@ -10,18 +10,28 @@ using System.Linq;
 [Serializable]
 public class Player : MonoBehaviour {
 
+
+    //bool 
     private bool pausePanel = false;
-
-    public float timer;
     
-    private float defaultTimer;
+    //float
+    public float movementSpeed;
+    public float timer;
 
+    private float maxSpeed;
+    private float defaultTimer;
+    float defaultMovementSpeed;
+
+
+    //public GameObject
     public GameObject sphere;
     public GameObject bomb;
     public GameObject[] spawnPoint;
 
+    //public Button
     public Button btn;
 
+    //public Text
     public Text score;
     public Text lifeScore;
     public Text loseMessage;
@@ -30,8 +40,10 @@ public class Player : MonoBehaviour {
     public Text maxComboMessage;
     public Text test;
 
+    //public int
     public int amountOfSpawnPoints;
 
+    //private int
     private int counter;
     private int levelCounter;
     private int testLifeCounter;
@@ -41,25 +53,34 @@ public class Player : MonoBehaviour {
     private int currentMaxCombo;
     private int chosenSpawnPoint;
 
+    //lists
     List<int> highScoreList = new List<int>();
-    int i = 0;
+    
 
 
-    //player
-    public float movementSpeed;
-    float defaultMovementSpeed;
+
+
+    
 
 	// Use this for initialization
 	public void Start () {
+
         Time.timeScale = 1.0f;
+
         Vector3 startPos = new Vector3(0.01f, -3.360001f, -0.0314405f);
+
         this.transform.position = startPos;
+
         Load();
 
+        maxSpeed = movementSpeed * 2;
 
         maxComboMessage.enabled = false;
+
         defaultMovementSpeed = movementSpeed;
+
         testLifeCounter = int.Parse(lifeScore.text);
+
         counter = 0;
 
         currentLife = testLifeCounter;
@@ -214,6 +235,7 @@ public class Player : MonoBehaviour {
 
     void highscoreAdd()
     {
+        int i = 0;
         if (testLifeCounter <= 0)
         {
             i++;
@@ -330,10 +352,12 @@ public class Player : MonoBehaviour {
 
     private void ExtraSpeed()
     {
+        
+
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
 
-            movementSpeed = 50;
+            movementSpeed = maxSpeed;
 
         }
         else
